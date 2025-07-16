@@ -1,29 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Quicksand Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Lobster Two & Poppins Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>GSAP Animated Portfolio</title>
-  </head>
-  <body>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Quicksand Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+  <!-- Lobster Two & Poppins Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+  <title>GSAP Animated Portfolio</title>
+</head>
+
+<body>
+  <main class="h-auto w-full bg-[#111827] text-white relative">
+    <!-- Header -->
+    <header class="flex items-center justify-center w-full fixed top-8 z-50">
+      <nav
+        class="flex items-center justify-between px-6 w-[500px] p-1 border border-white/15 rounded-full bg-white/10 backdrop-blur ">
+        <h1 class="text-3xl font-['Lobster_Two']">GSAP</h1>
+        <ul class="flex gap-4 font-['Poppin[#1F2937]">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="h-[500px] flex justify-around items-center z-0 overflow-hidden
+          [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
+      <div class="w-1/2 ">
+        <h1 class="text-5xl font-['Lobster_Two'] z-50 leading-tight ">
+          Building Exceptional <br> <span class="text-orange-400">User Experiences</span>
+        </h1>
+        <p class="mt-4 font-['Poppins'] text-lg ">I specialize in transforming designs into functional, <br>
+          hight-performance web applications.Lets discuss <br> your next project.</p>
+      </div>
+
+      <!-- Rotated Grid -->
+      <div>
+        <div class="grid grid-cols-2 gap-4 rotate-30 ">
+          <!-- Left Column -->
+          <div class="flex gap-4 flex-col" id="left-column">
+            <div class="bg-[#1F2937] h-66 w-42 rounded-md"></div>
+            <div class="bg-[#1F2937] h-66 w-42 rounded-md"></div>
+            <div class="bg-[#1F2937] h-66 w-42 rounded-md"></div>
+            <div class="bg-[#1F2937] h-66 w-42 rounded-md"></div>
+            <div class="bg-[#1F2937] h-66 w-42 rounded-md"></div>
+          </div>
+          <!-- Right Column -->
+          <div class="flex gap-4 flex-col" id="right-column">
+            <div class="bg-[#1F2937] h-66 w-42 rounded-md"></div>
+            <div class="bg-[#1F2937] h-66 w-42 rounded-md"></div>
+            <div class="bg-[#1F2937] h-66 w-42 rounded-md"></div>
+            <div class="bg-[#1F2937] h-66 w-42 rounded-md"></div>
+            <div class="bg-[#1F2937] h-66 w-42 rounded-md"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- other sections -->
+     <div class="h-screen">
+
+     </div>
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  </body>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to("#left-column", {
+        y: -200,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#left-column",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      gsap.to("#right-column", {
+        y: 200,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#right-column",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    </script>
+</body>
+
 </html>
