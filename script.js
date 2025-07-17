@@ -2,7 +2,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 gsap.to("#left-column", {
   y: -200,
-  ease: "none",
+  ease: "ease-in-out",
   scrollTrigger: {
     trigger: "#left-column",
     start: "top bottom",
@@ -13,7 +13,7 @@ gsap.to("#left-column", {
 
 gsap.to("#right-column", {
   y: 200,
-  ease: "none",
+  ease: "ease-in-out",
   scrollTrigger: {
     trigger: "#right-column",
     start: "top bottom",
