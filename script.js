@@ -42,6 +42,7 @@ gsap.to(gl, {
     trigger: "#gallery",
     start: "top bottom",
     end: "bottom top",
+    duration: 5,
     scrub: true,
   },
 });
