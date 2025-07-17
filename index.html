@@ -1,29 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Quicksand Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Lobster Two & Poppins Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>GSAP Animated Portfolio</title>
-  </head>
-  <body>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Quicksand Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+  <!-- Lobster Two & Poppins Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+  <title>GSAP Animated Portfolio</title>
+</head>
+
+<body>
+  <main class="h-auto w-full relative text-gray-800">
+    <!-- Header -->
+    <header class="flex items-center justify-center w-full fixed top-8 z-50">
+      <nav
+        class="flex items-center justify-between px-6 w-[500px] p-1 border border-black/10 rounded-full bg-white/30 backdrop-blur ">
+        <h1 class="text-3xl font-extrabold font-['Lobster_Two']"><span class="text-[#F7418F]">Port</span>folio</h1>
+        <ul class="flex gap-4 font-['Poppin[#1F2937]">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="h-[500px]  bg-gradient-to-bl from-[#FFF3C7]   relative flex justify-around items-center z-0 overflow-hidden
+          [mask-image:linear-gradient(to_bottom,transparent,black_0%,black_70%,transparent)]">
+      <div class="w-full text-center mt-10  z-50">
+        <h1 class="text-5xl  font-['Lobster_Two'] font-bold leading-tight ">
+          Building Exceptional <br> <span class="text-[#F7418F]">User Experiences</span>
+        </h1>
+        <p class="mt-4 font-['Poppins'] text-lg ">I specialize in transforming designs into functional, <br>
+          hight-performance web applications.Lets discuss <br> your next project.</p>
+      </div>
+
+      <!-- Rotated Grid -->
+      <div class="absolute left-1/2 flex justify-center items-center">
+        <div class="grid grid-cols-2 gap-4 rotate-30">
+          <!-- Left Column -->
+          <div class="flex gap-4 flex-col" id="left-column">
+            <img src="./assets/heroimg1.jpg" class="bg-[#FEC7B4] h-66 w-42 opacity-50 object-cover  rounded-md" alt="">
+            <img src="./assets/heroimg2.jpg" class="bg-[#FEC7B4] h-66 w-42 opacity-50 object-cover rounded-md" alt="">
+            <img src="./assets/heroimg3.jpg" class="bg-[#FEC7B4] h-66 w-42 opacity-50 object-cover rounded-md" alt="">
+            <img src="./assets/heroimg4.jpg" class="bg-[#FEC7B4] h-66 w-42 opacity-50 object-cover rounded-md" alt="">
+            <img src="./assets/heroimg5.jpg" class="bg-[#FEC7B4] h-66 w-42 opacity-50 object-cover rounded-md" alt="">
+          </div>
+          <!-- Right Column -->
+          <div class="flex gap-4 flex-col" id="right-column">
+            <img src="./assets/heroimg1.jpg" class="bg-[#FEC7B4] h-66 w-42 opacity-50 object-cover  rounded-md" alt="">
+            <img src="./assets/heroimg6.jpg" class="bg-[#FEC7B4] h-66 w-42 opacity-50 object-cover rounded-md" alt="">
+            <img src="./assets/heroimg3.jpg" class="bg-[#FEC7B4] h-66 w-42 opacity-50 object-cover rounded-md" alt="">
+            <img src="./assets/heroimg2.jpg" class="bg-[#FEC7B4] h-66 w-42 opacity-50 object-cover rounded-md" alt="">
+            <img src="./assets/heroimg1.jpg" class="bg-[#FEC7B4] h-66 w-42 opacity-50 object-cover rounded-md" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About sections -->
+    <div class="h-1/2 bg-[#FFF3C7] flex flex-col items-center justify-center">
+      <!-- Heading -->
+      <div class="w-full mb-10 overflow-hidden bg-[#FFF3C7] ">
+        <h1 class="text-8xl font-['Lobster_Two'] font-bold text-center mt-28" id="aboutHeading">
+          <div class="flex items-center justify-center gap-4 flex-wrap">
+            <span class=" bg-[#FEC7B4] hover:scale-110 transition duration-500 w-[100px] h-[100px] rounded-full"></span>
+            Analytics
+            <img class=" w-48 h-20 rounded-md object-cover hover:scale-110 transition duration-500 bg-[#FEC7B4]"
+              src="./assets/laptop.png" alt="laptop image">
+          </div>
+          <div class="">
+            that help you
+          </div>
+          <div class="flex items-center justify-center gap-4 mt-4 flex-wrap">
+            shape
+            <span
+              class="bg-[#FC819E] hover:scale-110 transition duration-500 w-[100px] h-[100px] rounded-full flex-shrink-0"></span>
+            the future
+          </div>
+        </h1>
+      </div>
+    </div>
+
+    <!-- gellery section -->
+    <div
+      class="h-[600px] z-99 flex items-center justify-center transition ease-in-out duration-200  bg-gradient-to-bl to-[#FEC7B4] from-[#FFF3C7] rounded-md"
+      id="gallery">
+      <div class="flex justify-between flex-wrap items-center gap-4 ">
+        <img src="./assets/heroimg1.jpg" alt="" class="bg-[#FEC7B4]  h-66 w-72 object-cover  rounded-md">
+        <img src="./assets/heroimg2.jpg" alt="" class="bg-[#FEC7B4] h-66 w-72 object-cover  rounded-md">
+        <img src="./assets/heroimg3.jpg" alt="" class="bg-[#FEC7B4] h-66 w-72 object-cover  rounded-md">
+        <img src="./assets/heroimg4.jpg" alt="" class="bg-[#FEC7B4] h-66 w-72 object-cover  rounded-md">
+        <img src="./assets/heroimg5.jpg" alt="" class="bg-[#FEC7B4] h-66 w-72 object-cover  rounded-md">
+        <img src="./assets/heroimg6.jpg" alt="" class="bg-[#FEC7B4] h-66 w-72 object-cover  rounded-md">
+        <img src="./assets/heroimg2.jpg" alt="" class="bg-[#FEC7B4] h-66 w-72 object-cover  rounded-md"><img
+          src="./assets/heroimg3.jpg" alt=""
+          class="bg-[#FEC7B4] opacity-60 h-66 w-72 opacity-50 object-cover  rounded-md">
+      </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  </body>
+    <script src="script.js"></script>
+</body>
+
 </html>
