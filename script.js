@@ -21,3 +21,15 @@ gsap.to("#right-column", {
     scrub: true,
   },
 });
+
+gsap.to('#aboutHeading',{
+  y: -500,
+  display : 'hidden',
+})
+
+gsap.from("#aboutHeading", {
+  y: 0,
+  ease: "ease-in-out",
+  duration : 1,
+  display : 'block',
+});
