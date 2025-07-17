@@ -1,3 +1,4 @@
+let gl = document.getElementById('gallery')
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to("#left-column", {
@@ -22,14 +23,25 @@ gsap.to("#right-column", {
   },
 });
 
-gsap.to('#aboutHeading',{
+gsap.to('#aboutHeading', {
   y: -500,
-  display : 'hidden',
+  display: 'hidden',
 })
 
 gsap.from("#aboutHeading", {
   y: 0,
   ease: "ease-in-out",
-  duration : 1,
-  display : 'block',
+  duration: 1,
+  display: 'block',
+});
+
+gsap.to(gl, {
+  y: -500,
+  ease: "ease-in-out",
+  scrollTrigger: {
+    trigger: "#gallery",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+  },
 });
