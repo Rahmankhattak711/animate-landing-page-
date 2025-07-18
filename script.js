@@ -46,3 +46,13 @@ gsap.to(gl, {
     scrub: true,
   },
 });
+
+gsap.to('#heading', {
+  transform: 'translateX(-30%)',
+  scrollTrigger: {
+    trigger: '#headingAnimation',
+    start: 'top top',
+    end: 'bottom top',
+    scrub: 1
+  }
+})
